@@ -27,9 +27,9 @@
     spec-url="https://api.stg.pazemo.com/openapi.json"
     allow-server-selection = "true"
     show-header = "false"
-    show-info	= "true"
+    show-info	= "false"
     theme = "light"
-    primary-color = "#00bfff"
+    primary-color = "#43c7e2"
     allow-try = "true"
     sort-endpoints-by = "summary"
     allow-api-list-style-selection = "false"
@@ -39,11 +39,27 @@
     schema-style = 'tree'
     render-style = 'read'
     default-schema-tab = "model"
+    fetch-credentials = "same-origin"
+    sort-tags = "true"
   >
   <div slot="nav-logo" style="display: flex; align-items: center; justify-content: center;"> 
     <img src="https://raw.githubusercontent.com/Pazemo/docs/main/source/images/logo.png" style="width:100px; margin-right: 5px"> <span style="color:#00bfff"> <b>API</b></span>
   </div> 
   </rapi-doc>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+      let docEl = document.getElementById("thedoc");
+
+      docEl.addEventListener('before-render', (e) => {
+        e.detail.spec.info.description = "Pazemo API` event";
+      });
+
+      docEl.addEventListener('after-try', (e) => {
+        console.log(e.detail);
+      });
+    })
+  </script>
 
 </body>
 
