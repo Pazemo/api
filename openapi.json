@@ -3666,7 +3666,7 @@
   },
   "servers": [
     {
-      "url": "http://api.stg.pazemo.com"
+      "url": "https://api.stg.pazemo.com"
     }
   ],
   "components": {
